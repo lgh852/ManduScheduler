@@ -1,1 +1,12 @@
+jdbc:
+  deriver: oracle.jdbc.driver.OracleDriver
+  url: jdbc:oracle:thin:@132.226.234.210:1521:xe
+  user:
+    name: mdmin
+    password: 1234
 
+    
+naver:
+  client:
+    id: RsdNOQG91qKNC7RveZ1S
+    secret: 58uVz9H6ap

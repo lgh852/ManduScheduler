@@ -13,3 +13,6 @@ public class ManduSchedulerApplication {
 		SpringApplication.run(ManduSchedulerApplication.class, args);
 	}
 }
+
+
+

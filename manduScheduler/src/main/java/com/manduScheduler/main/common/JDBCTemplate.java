@@ -6,13 +6,27 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class JDBCTemplate {
 	
-	private static final String jdbcDeriver = "oracle.jdbc.driver.OracleDriver";
-	private static final String jdbcUrl = "jdbc:oracle:thin:@132.226.234.210:1521:xe";
-	private static final String jdbcUserName = "mdmin";
-	private static final String jdbcPasswrod = "1234";
-
+//	@Value("${jdbc.deriver}")
+//	private static String jdbcDeriver;
+//	@Value("${jdbc.url}")
+//	private static String jdbcUrl;
+//	@Value("${jdbc.user.name}")
+//	private static String jdbcUserName;
+//	@Value("${jdbc.user.password}")
+//	private static String jdbcPasswrod;
+	
+	private static String jdbcDeriver = "oracle.jdbc.driver.OracleDriver";
+	
+	private static String jdbcUrl = "jdbc:oracle:thin:@132.226.234.210:1521:xe";
+	
+	private static String jdbcUserName = "mdmin";
+	
+	private static String jdbcPasswrod = "1234";
+	
 	public Connection getConnection() {
 		
 		Connection conn = null;
