@@ -34,7 +34,7 @@ public class ShoppingJob implements Job{
 		try {
 			Thread[] thread=new Thread[10];
 			String[] query = {"비비고 왕교자 350g","비비고 군만두 450", "하림 치킨너겟 1kg"};
-			for(int i=1;i<query.length;i++){
+			for(int i=0;i<query.length;i++){
 				System.out.println("========= ShoppingThread : "+query[i]+" execute =========== ");
 				thread[i]=new Thread(new ShoppingThread("Thread : " + query[i], clientId, secret, query[i]));
 				thread[i].start();
@@ -45,6 +45,5 @@ public class ShoppingJob implements Job{
 			e.printStackTrace();
 		}
 	}
-
 }
  
