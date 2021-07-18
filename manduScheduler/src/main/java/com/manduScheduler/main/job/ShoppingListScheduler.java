@@ -21,7 +21,7 @@ public class ShoppingListScheduler {
 	@PostConstruct
 	public void init() {
 		try {
-			JobDetail jobDetail = JobBuilder.newJob(ShoppingGetNaverInfoJob.class)
+			JobDetail jobDetail = JobBuilder.newJob(ShoppingJob.class)
 					.withIdentity("testJob", "test")
 					.build();
 			

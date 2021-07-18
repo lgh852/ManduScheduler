@@ -21,7 +21,7 @@ import com.manduScheduler.main.thread.ShoppingThread;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 @Component
-public class ShoppingGetNaverInfoJob implements Job{
+public class ShoppingJob implements Job{
 
 	@Value("${naver.client.id}")
 	private String clientId;
@@ -32,20 +32,14 @@ public class ShoppingGetNaverInfoJob implements Job{
 	public void execute(JobExecutionContext context) throws JobExecutionException {
 		// TODO Auto-generated method stub
 		try {
-			System.out.println("MainThread Start");
-
-			System.out.println("====================");
-			System.out.println(clientId);
-			System.out.println(secret);
-			System.out.println("====================");
 			Thread[] thread=new Thread[10];
-			
-			for(int i=1;i<=1;i++){
-				thread[i]=new Thread(new ShoppingThread("Thread"+i, clientId, secret));
+			String[] query = {"비비고 왕교자 350g","비비고 군만두 450", "하림 치킨너겟 1kg"};
+			for(int i=1;i<query.length;i++){
+				System.out.println("========= ShoppingThread : "+query[i]+" execute =========== ");
+				thread[i]=new Thread(new ShoppingThread("Thread : " + query[i], clientId, secret, query[i]));
 				thread[i].start();
-				//thread[i].join();
+				thread[i].join();
 			}
-			System.out.println("MainThread End");	
 			
 		}catch (Exception e) {
 			e.printStackTrace();

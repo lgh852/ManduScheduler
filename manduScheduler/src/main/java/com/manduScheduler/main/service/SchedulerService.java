@@ -56,14 +56,10 @@ public class SchedulerService {
 					   sql +=   " UNION ALL ";
 				   }
 			   }
-			   System.out.println("query : "+sql);
 			  
 		try {
 			
 			pstmt = conn.prepareStatement(sql); // 미완성된 sql문
-			//pstmt.setInt(1, b.getBkPr ice());
-			
-			//result = pstmt.executeUpdate();
 			pstmt.executeUpdate();
 			
 		}catch (SQLException e) {
